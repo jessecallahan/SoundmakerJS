@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sound Maker</title>
+  <meta charset="utf-8">
+  <link href="./css/styles.css" rel="stylesheet" type="text/css">
+  <script src="./js/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <header name="Access-Control-Allow-Origin" value="*">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="column">
+
+      <button data-playing="false" id="oscillator1-play" class="tape-controls-play" role="switch" aria-checked="false">
+        <span>OSC1 PLAY/PAUSE</span>
+      </button>
+      <br><br>
+
+      <label for="freq">FREQ</label>
+      <input type="range" orient="vertical" id="osc1-freq" class="control-freq" list="freq-vals" min="0" max="10000"
+        value="0" step="0.1" data-action="freq" />
+
+      <label for="delay">DELAY</label>
+      <input type="range" orient="vertical" id="osc1-delay" class="control-delay" list="delay-vals" min="0" max="2"
+        value="0" step="0.01" data-action="delay" />
+
+      <label for="volume">VOL</label>
+      <input type="range" orient="vertical" id="osc1-volume" class="control-volume" min="0" max="1" value=".2"
+        list="gain-vals" step="0.01" data-action="volume" />
+
+      <br>
+      <label for="volume">L</label><input type="range" id="osc1-panner" class="control-panner" list="pan-vals" min="-1"
+        max="1" value="0" step="0.01" data-action="panner" />R
+      <br>
+
+
+
+      <div class="field">
+        <section class="section">
+          <span class="select">
+            <select id="osc1-waveform" name="waveform">
+              <option value="triangle">TRIANGLE</option>
+              <option value="sawtooth">SAWTOOTH</option>
+              <option value="sine">SINE</option>
+              <option value="square">SQUARE</option>
+            </select>
+          </span>
+        </section>
+      </div><br>
+    </div>
+    <div class="column">
+
+
+      <button data-playing="false" id="oscillator2-play" class="tape-controls-play" role="switch" aria-checked="false">
+        <span>OSC2 PLAY/PAUSE</span>
+      </button>
+      <br><br>
+
+
+      <label for="freq">FREQ</label>
+      <input type="range" orient="vertical" id="osc2-freq" class="control-freq" list="freq-vals" min="0" max="10000"
+        value="0" step="0.1" data-action="freq" />
+
+      <label for="delay">DELAY</label>
+      <input type="range" orient="vertical" id="osc2-delay" class="control-delay" list="delay-vals" min="0" max="2"
+        value="0" step="0.01" data-action="delay" />
+
+      <label for="volume">VOL</label>
+      <input type="range" orient="vertical" id="osc2-volume" class="control-volume" min="0" max="1" value=".2"
+        list="gain-vals" step="0.01" data-action="volume" />
+      <br>
+
+      <label for="panner">L</label>
+      <input type="range" id="osc2-panner" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01"
+        data-action="panner" />R
+
+      <div class="field">
+        <section class="section">
+          <span class="select">
+            <select id="osc2-waveform" name="waveform">
+              <option value="triangle">TRIANGLE</option>
+              <option value="sawtooth">SAWTOOTH</option>
+              <option value="sine">SINE</option>
+              <option value="square">SQUARE</option>
+            </select>
+          </span>
+        </section>
+      </div>
+      <br>
+    </div>
+    <div class="column">
+
+
+      <button data-playing="false" id="oscillator3-play" class="tape-controls-play" role="switch" aria-checked="false">
+        <span>OSC3 W/REV PLAY/PAUSE</span>
+      </button>
+
+
+      <br><br>
+      <label for="freq">FREQ</label>
+      <input type="range" orient="vertical" id="osc3-freq" class="control-freq" list="freq-vals" min="0" max="10000"
+        value="0" step="0.1" data-action="freq" />
+
+      <label for="delay">DELAY</label>
+      <input type="range" orient="vertical" id="osc3-delay" class="control-delay" list="delay-vals" min="0" max="2"
+        value="0" step="0.01" data-action="delay" />
+
+      <label for="volume">VOL</label>
+      <input type="range" orient="vertical" id="osc3-volume" class="control-volume" min="0" max="1" value=".2"
+        list="gain-vals" step="0.01" data-action="volume" />
+      <br>
+      <label for="panner">L</label>
+      <input type="range" id="osc3-panner" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01"
+        data-action="panner" />R
+      <br>
+
+
+
+      <div class="field">
+        <section class="section">
+          <span class="select">
+            <select id="osc3-waveform" name="waveform">
+              <option value="triangle">TRIANGLE</option>
+              <option value="sawtooth">SAWTOOTH</option>
+              <option value="sine">SINE</option>
+              <option value="square">SQUARE</option>
+            </select>
+          </span>
+        </section>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+
+
+
+  <div class="beatcss">
+
+
+
+    <label for="drumVolume">DRUM VOLUME</label>
+    <input type="range" id="drumVolume" class="control-drumVolume" min="0" max="1" value=".2" list="gain-vals"
+      step="0.01" data-action="drumVolume" />
+
+    <label for="lowpass">LOWPASS</label>
+    <input type="range" id="lowpass" class="control-lowpass" list="lowpass-vals" min="250" max="5000" value="5000"
+      step="1" data-action="lowpass" />
+
+    <label for="delayDrum">DELAY</label>
+    <input type="range" id="delayDrum" class="control-delayDrum" list="delayDrum-vals" min="0" max="2" value="0"
+      step="0.01" data-action="delayDrum" />
+    <br>
+    <button data-playing="false" id="techno-play" class="beatboxplay" role="switch" aria-checked="false">
+      <span>POP >|| </span>
+    </button>
+
+    <button data-playing="false" id="drum-bass-play" class="beatboxplay" role="switch" aria-checked="false">
+      <span>JAZZ >|| </span>
+    </button>
+
+    <button data-playing="false" id="downtempo-play" class="beatboxplay" role="switch" aria-checked="false">
+      <span>TECHNO >|| </span>
+    </button>
+
+    <button data-playing="false" id="rock-play" class="beatboxplay" role="switch" aria-checked="false">
+      <span>ROCK >|| </span>
+    </button>
+
+
+  </div>
+  <br>
+  <audio loop id="techno" src="./audio/trippyPop.wav" crossorigin="anonymous"></audio>
+  <audio loop id="drumandbass" src="./audio/JazzB.wav" crossorigin="anonymous"></audio>
+  <audio loop id="downtempo" src="./audio/BootsAndCatsTechno.wav" crossorigin="anonymous"></audio>
+  <audio loop id="rock" src="./audio/Rock.wav" crossorigin="anonymous"></audio>
+  <script src="./js/scripts.js"></script>
+
+
+
+
+</body>
